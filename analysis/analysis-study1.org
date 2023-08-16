@@ -1,0 +1,29 @@
+#+PROPERTY: header-args:jupyter-python  :kernel <analysis> :display text/plain
+#+PROPERTY: header-args:jupyter-R :kernel ir :session r :display text/plain
+
+* Setting up environment
+
+#+begin_src sh :eval never
+  poetry run python -m ipykernel install --user --name <analysis>
+#+end_src
+
+
+- If the kernel above is not showing, most likely emacs-jupyter is using a cached list of the kernelspecs. Do a refresh of the kernelspecs:
+#+begin_src emacs-lisp :results code :eval never
+  (jupyter-available-kernelspecs 'refresh)
+#+end_src
+
+* Restore session
+#+begin_src jupyter-python
+  import dill
+  dill.load_session('../cache/notebook_env.db')
+#+end_src
+
+
+* Save Session
+#+begin_src jupyter-python
+  import dill
+  dill.dump_session('../cache/notebook_env.db')
+#+end_src
+
+

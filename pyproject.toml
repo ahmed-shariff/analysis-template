@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "<analysis>"
+version = "0.1.0"
+description = "Analysis of <analysis>"
+authors = ["Shariff Faleel <shariff.mfa@outlook.com>"]
+readme = "README.md"
+packages = [{include = "analysis"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.0.3"
+ipykernel = "^6.25.1"
+seaborn = "^0.12.2"
+dill = "^0.3.7"
+tqdm = "^4.66.1"
+scipy = "^1.11.1"
+scikit-posthocs = "^0.7.0"
+pingouin = "^0.5.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
